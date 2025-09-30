@@ -5,6 +5,7 @@ import com.example.exemplo_repositorio.services.JogadorService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/jogadores")
@@ -27,5 +28,12 @@ public class JogadorController {
     @GetMapping
     public List<Jogador> getAllJogador() {
         return jogadorService.getAllJogadores();
+    }
+
+    @GetMapping("/{id}")
+    public Jogador getJogador(@PathVariable UUID id) {
+
+        return jogadorService.getJogador();
+
     }
 }

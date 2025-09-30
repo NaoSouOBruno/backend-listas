@@ -5,6 +5,7 @@ import com.example.exemplo_repositorio.repositories.JogadorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class JogadorService {
@@ -30,6 +31,10 @@ public class JogadorService {
 
     public List<Jogador> getAllJogadores() {
         return jogadorRepository.findAll();
+    }
+
+    public Jogador getJogador(UUID id) {
+        return jogadorRepository.findById(UUID id);
     }
 
 }
